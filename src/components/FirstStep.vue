@@ -20,14 +20,16 @@
 				<p class="validation-error" v-if="!$v.patronymic.alpha">Поле должно содержать только буквы</p>
 			</div>
 
-			<div>
-				<input type="tel" maxlength="11" id="tel" placeholder="Введите ваш номер телефона*" class="rounded-field" :class="{ 'input-error': $v.phone.$error }" v-model.trim="phone">
-				<p class="validation-error" v-if="!$v.phone.startBySeven">Номер должен начинатся с 7</p>
-				<p class="validation-error" v-else-if="!$v.phone.numeric">Поле должно содержать только цыфры</p>
-				<p class="validation-error" v-else-if="$v.phone.$error">Поле обязательно для заполнения</p>
-			</div>
 		</div>
 		
+		<div>
+			<p>Введите ваш номер телефона*</p>
+			<input type="tel" maxlength="11" id="tel" class="rounded-field" :class="{ 'input-error': $v.phone.$error }" v-model.trim="phone">
+			<p class="validation-error" v-if="!$v.phone.startBySeven">Номер должен начинатся с 7</p>
+			<p class="validation-error" v-else-if="!$v.phone.numeric">Поле должно содержать только цыфры</p>
+			<p class="validation-error" v-else-if="$v.phone.$error">Поле обязательно для заполнения</p>
+		</div>
+
 		<div class="form-row">
 			<div>
 				<p>Выберете вашу дату рожения*</p>
